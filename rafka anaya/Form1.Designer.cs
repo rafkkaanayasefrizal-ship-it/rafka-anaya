@@ -28,14 +28,14 @@ namespace rafka_anaya
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.kdBahan = new System.Windows.Forms.TextBox();
+            this.nmBahan = new System.Windows.Forms.TextBox();
+            this.cbKategori = new System.Windows.Forms.ComboBox();
+            this.NmcStok = new System.Windows.Forms.NumericUpDown();
+            this.txtSatuan = new System.Windows.Forms.TextBox();
+            this.txtHarga_satuan = new System.Windows.Forms.TextBox();
+            this.nmcBatas_minimum = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,72 +43,97 @@ namespace rafka_anaya
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.tambah = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.kodeBahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaBahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kategori = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaSatuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.batasMinimum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NmcStok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBatas_minimum)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(296, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(505, 299);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.kodeBahan,
+            this.namaBahan,
+            this.kategori,
+            this.stok,
+            this.satuan,
+            this.hargaSatuan,
+            this.batasMinimum,
+            this.status});
+            this.dataGridView.Location = new System.Drawing.Point(267, 26);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.Size = new System.Drawing.Size(505, 299);
+            this.dataGridView.TabIndex = 0;
             // 
-            // textBox1
+            // kdBahan
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 26);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 23);
-            this.textBox1.TabIndex = 1;
+            this.kdBahan.Location = new System.Drawing.Point(44, 26);
+            this.kdBahan.Multiline = true;
+            this.kdBahan.Name = "kdBahan";
+            this.kdBahan.Size = new System.Drawing.Size(189, 23);
+            this.kdBahan.TabIndex = 1;
             // 
-            // textBox2
+            // nmBahan
             // 
-            this.textBox2.Location = new System.Drawing.Point(45, 74);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(189, 23);
-            this.textBox2.TabIndex = 1;
+            this.nmBahan.Location = new System.Drawing.Point(45, 74);
+            this.nmBahan.Multiline = true;
+            this.nmBahan.Name = "nmBahan";
+            this.nmBahan.Size = new System.Drawing.Size(189, 23);
+            this.nmBahan.TabIndex = 1;
             // 
-            // comboBox1
+            // cbKategori
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(44, 125);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbKategori.FormattingEnabled = true;
+            this.cbKategori.Location = new System.Drawing.Point(44, 125);
+            this.cbKategori.Name = "cbKategori";
+            this.cbKategori.Size = new System.Drawing.Size(189, 21);
+            this.cbKategori.TabIndex = 2;
             // 
-            // numericUpDown1
+            // NmcStok
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(45, 177);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(189, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.NmcStok.Location = new System.Drawing.Point(45, 177);
+            this.NmcStok.Name = "NmcStok";
+            this.NmcStok.Size = new System.Drawing.Size(189, 20);
+            this.NmcStok.TabIndex = 3;
             // 
-            // textBox3
+            // txtSatuan
             // 
-            this.textBox3.Location = new System.Drawing.Point(45, 218);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(189, 23);
-            this.textBox3.TabIndex = 1;
+            this.txtSatuan.Location = new System.Drawing.Point(45, 218);
+            this.txtSatuan.Multiline = true;
+            this.txtSatuan.Name = "txtSatuan";
+            this.txtSatuan.Size = new System.Drawing.Size(189, 23);
+            this.txtSatuan.TabIndex = 1;
             // 
-            // textBox4
+            // txtHarga_satuan
             // 
-            this.textBox4.Location = new System.Drawing.Point(45, 261);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(189, 20);
-            this.textBox4.TabIndex = 1;
+            this.txtHarga_satuan.Location = new System.Drawing.Point(45, 261);
+            this.txtHarga_satuan.Multiline = true;
+            this.txtHarga_satuan.Name = "txtHarga_satuan";
+            this.txtHarga_satuan.Size = new System.Drawing.Size(189, 20);
+            this.txtHarga_satuan.TabIndex = 1;
             // 
-            // numericUpDown2
+            // nmcBatas_minimum
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(45, 305);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(189, 20);
-            this.numericUpDown2.TabIndex = 3;
+            this.nmcBatas_minimum.Location = new System.Drawing.Point(45, 305);
+            this.nmcBatas_minimum.Name = "nmcBatas_minimum";
+            this.nmcBatas_minimum.Size = new System.Drawing.Size(189, 20);
+            this.nmcBatas_minimum.TabIndex = 3;
             // 
             // label1
             // 
@@ -160,24 +185,105 @@ namespace rafka_anaya
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(42, 245);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "label1";
+            this.label6.Text = "Harga satuan";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(41, 289);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 4;
-            this.label7.Text = "label1";
+            this.label7.Text = "Batas minimum";
+            // 
+            // tambah
+            // 
+            this.tambah.BackColor = System.Drawing.Color.Cyan;
+            this.tambah.Location = new System.Drawing.Point(322, 353);
+            this.tambah.Name = "tambah";
+            this.tambah.Size = new System.Drawing.Size(75, 23);
+            this.tambah.TabIndex = 5;
+            this.tambah.Text = "ADD";
+            this.tambah.UseVisualStyleBackColor = false;
+            // 
+            // update
+            // 
+            this.update.Location = new System.Drawing.Point(451, 353);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 23);
+            this.update.TabIndex = 5;
+            this.update.Text = "Update";
+            this.update.UseVisualStyleBackColor = true;
+            // 
+            // delete
+            // 
+            this.delete.BackColor = System.Drawing.Color.Red;
+            this.delete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.delete.Location = new System.Drawing.Point(581, 353);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 5;
+            this.delete.Text = "Delete";
+            this.delete.UseVisualStyleBackColor = false;
+            // 
+            // kodeBahan
+            // 
+            this.kodeBahan.HeaderText = "Kode bahan";
+            this.kodeBahan.Name = "kodeBahan";
+            this.kodeBahan.ReadOnly = true;
+            // 
+            // namaBahan
+            // 
+            this.namaBahan.HeaderText = "Nama Bahan";
+            this.namaBahan.Name = "namaBahan";
+            this.namaBahan.ReadOnly = true;
+            // 
+            // kategori
+            // 
+            this.kategori.HeaderText = "Kategori";
+            this.kategori.Name = "kategori";
+            this.kategori.ReadOnly = true;
+            // 
+            // stok
+            // 
+            this.stok.HeaderText = "Stok";
+            this.stok.Name = "stok";
+            this.stok.ReadOnly = true;
+            // 
+            // satuan
+            // 
+            this.satuan.HeaderText = "Satuan";
+            this.satuan.Name = "satuan";
+            this.satuan.ReadOnly = true;
+            // 
+            // hargaSatuan
+            // 
+            this.hargaSatuan.HeaderText = "Harga satuan";
+            this.hargaSatuan.Name = "hargaSatuan";
+            this.hargaSatuan.ReadOnly = true;
+            // 
+            // batasMinimum
+            // 
+            this.batasMinimum.HeaderText = "Batas minimum";
+            this.batasMinimum.Name = "batasMinimum";
+            this.batasMinimum.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.update);
+            this.Controls.Add(this.tambah);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -185,19 +291,19 @@ namespace rafka_anaya
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.nmcBatas_minimum);
+            this.Controls.Add(this.NmcStok);
+            this.Controls.Add(this.cbKategori);
+            this.Controls.Add(this.txtHarga_satuan);
+            this.Controls.Add(this.txtSatuan);
+            this.Controls.Add(this.nmBahan);
+            this.Controls.Add(this.kdBahan);
+            this.Controls.Add(this.dataGridView);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NmcStok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmcBatas_minimum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,14 +311,14 @@ namespace rafka_anaya
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.TextBox kdBahan;
+        private System.Windows.Forms.TextBox nmBahan;
+        private System.Windows.Forms.ComboBox cbKategori;
+        private System.Windows.Forms.NumericUpDown NmcStok;
+        private System.Windows.Forms.TextBox txtSatuan;
+        private System.Windows.Forms.TextBox txtHarga_satuan;
+        private System.Windows.Forms.NumericUpDown nmcBatas_minimum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -220,6 +326,17 @@ namespace rafka_anaya
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button tambah;
+        private System.Windows.Forms.Button update;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kodeBahan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namaBahan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kategori;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stok;
+        private System.Windows.Forms.DataGridViewTextBoxColumn satuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargaSatuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn batasMinimum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
 
