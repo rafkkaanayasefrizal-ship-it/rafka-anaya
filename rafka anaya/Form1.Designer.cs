@@ -29,6 +29,14 @@ namespace rafka_anaya
         private void InitializeComponent()
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.kodeBahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namaBahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kategori = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stok = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaSatuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.batasMinimum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kdBahan = new System.Windows.Forms.TextBox();
             this.nmBahan = new System.Windows.Forms.TextBox();
             this.cbKategori = new System.Windows.Forms.ComboBox();
@@ -46,14 +54,6 @@ namespace rafka_anaya
             this.tambah = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
-            this.kodeBahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namaBahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kategori = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stok = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargaSatuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.batasMinimum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NmcStok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmcBatas_minimum)).BeginInit();
@@ -80,6 +80,54 @@ namespace rafka_anaya
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.Size = new System.Drawing.Size(505, 299);
             this.dataGridView.TabIndex = 0;
+            // 
+            // kodeBahan
+            // 
+            this.kodeBahan.HeaderText = "Kode bahan";
+            this.kodeBahan.Name = "kodeBahan";
+            this.kodeBahan.ReadOnly = true;
+            // 
+            // namaBahan
+            // 
+            this.namaBahan.HeaderText = "Nama Bahan";
+            this.namaBahan.Name = "namaBahan";
+            this.namaBahan.ReadOnly = true;
+            // 
+            // kategori
+            // 
+            this.kategori.HeaderText = "Kategori";
+            this.kategori.Name = "kategori";
+            this.kategori.ReadOnly = true;
+            // 
+            // stok
+            // 
+            this.stok.HeaderText = "Stok";
+            this.stok.Name = "stok";
+            this.stok.ReadOnly = true;
+            // 
+            // satuan
+            // 
+            this.satuan.HeaderText = "Satuan";
+            this.satuan.Name = "satuan";
+            this.satuan.ReadOnly = true;
+            // 
+            // hargaSatuan
+            // 
+            this.hargaSatuan.HeaderText = "Harga satuan";
+            this.hargaSatuan.Name = "hargaSatuan";
+            this.hargaSatuan.ReadOnly = true;
+            // 
+            // batasMinimum
+            // 
+            this.batasMinimum.HeaderText = "Batas minimum";
+            this.batasMinimum.Name = "batasMinimum";
+            this.batasMinimum.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // kdBahan
             // 
@@ -207,6 +255,7 @@ namespace rafka_anaya
             this.tambah.TabIndex = 5;
             this.tambah.Text = "ADD";
             this.tambah.UseVisualStyleBackColor = false;
+            this.tambah.Click += new System.EventHandler(this.tambah_Click);
             // 
             // update
             // 
@@ -227,54 +276,6 @@ namespace rafka_anaya
             this.delete.TabIndex = 5;
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = false;
-            // 
-            // kodeBahan
-            // 
-            this.kodeBahan.HeaderText = "Kode bahan";
-            this.kodeBahan.Name = "kodeBahan";
-            this.kodeBahan.ReadOnly = true;
-            // 
-            // namaBahan
-            // 
-            this.namaBahan.HeaderText = "Nama Bahan";
-            this.namaBahan.Name = "namaBahan";
-            this.namaBahan.ReadOnly = true;
-            // 
-            // kategori
-            // 
-            this.kategori.HeaderText = "Kategori";
-            this.kategori.Name = "kategori";
-            this.kategori.ReadOnly = true;
-            // 
-            // stok
-            // 
-            this.stok.HeaderText = "Stok";
-            this.stok.Name = "stok";
-            this.stok.ReadOnly = true;
-            // 
-            // satuan
-            // 
-            this.satuan.HeaderText = "Satuan";
-            this.satuan.Name = "satuan";
-            this.satuan.ReadOnly = true;
-            // 
-            // hargaSatuan
-            // 
-            this.hargaSatuan.HeaderText = "Harga satuan";
-            this.hargaSatuan.Name = "hargaSatuan";
-            this.hargaSatuan.ReadOnly = true;
-            // 
-            // batasMinimum
-            // 
-            this.batasMinimum.HeaderText = "Batas minimum";
-            this.batasMinimum.Name = "batasMinimum";
-            this.batasMinimum.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
             // 
             // Form1
             // 
@@ -301,6 +302,7 @@ namespace rafka_anaya
             this.Controls.Add(this.dataGridView);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NmcStok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmcBatas_minimum)).EndInit();
